@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reetu Gupta | Share Modal App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Tagesschrift&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main id="wrapper">
+        
+        <!-- Animated Balls -->
+        <div class="balls">
+            <span class="ball"></span>
+            <span class="ball"></span>
+            <span class="ball"></span>
+            <span class="ball"></span>
+            <span class="ball"></span>
+            <span class="ball"></span>
+            <span class="ball"></span>
+            <span class="ball"></span>
+        </div>
+
+        <!-- Card -->
+        <div class="card">
+            <img src="img.jpg" alt="">
+
+            <h1 class="name">Reetu Gupta</h1>
+            
+            <p class="about">Web Developer</p>
+
+            <!-- buttons -->
+            <div class="buttons">
+                <button class="share-btn" onclick="openSharemodal()">
+                    <i class="fa-solid fa-share"></i>
+                    Share My Profile
+                </button>
+    
+                <button class="follow-me-btn" onclick="openFollowmodal()">
+                    Follow Me
+                </button>
+            </div>
+        </div>
+
+        <!-- overlay -->
+        <div class="overlay" onclick="closeModal()"></div>
+
+        <!-- Share modal -->
+        <div class="share-modal">
+            <span class="share">
+                <h2>Share My Profile</h2>
+                <i class="fa-solid fa-xmark close-icon" onclick="closeModal()"></i>
+            </span>
+
+            <!-- copy button -->
+            <span class="link">
+                <span class="copy">
+                    Copy Link
+                </span>
+                <i class="fa-solid fa-link"></i>
+                <button class="tooltip copy-btn" data-tooltip="Copied" onclick="copyURL()">Copy</button>
+            </span>
+        </div>
+
+        <!-- follow modal -->
+        <div class="follow-modal">
+            <span class="follow">
+                <h2>Let's Connect</h2>
+                <i class="fa-solid fa-xmark close-icon" onclick="closeModal()"></i>
+            </span>
+
+            <div class="icons">
+                <a href="https://www.linkedin.com/in/reetugupta07/" target="_blank" id="linkedin" class="tooltip" data-tooltip="LinkedIn">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+
+                <a href="https://github.com/ReetuGupta" target="_blank" id="github" class="tooltip" data-tooltip="GitHub">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+
+                <a href="#" id="twitter" class="tooltip" data-tooltip="Twitter">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+
+                <a href="#" id="reddit" class="tooltip" data-tooltip="Reddit">
+                    <i class="fa-brands fa-reddit"></i>
+                </a>
+
+                <a href="#" id="whatsapp" class="tooltip" data-tooltip="WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>
