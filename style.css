@@ -303,7 +303,7 @@ button.tooltip{
     transition: all .2s ease-in-out;
 }
 
-button.tooltip:active::after {
+button.tooltip.active::after {
     content: attr(data-tooltip);
     position: absolute;
     left: 10%;
@@ -313,14 +313,10 @@ button.tooltip:active::after {
     padding: 5px 10px;
     border-radius: 5px;
     white-space: nowrap;
-    opacity: 0;
+    opacity: 1;
     transition: opacity 0.3s ease;
     font-size: 0.8rem;
     z-index: 10;
-}
-  
- button.tooltip:hover::after {
-    opacity: 1;
 }
 
 /* follow modal */

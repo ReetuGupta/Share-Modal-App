@@ -1,6 +1,7 @@
 let shareModal = document.querySelector(".share-modal");
 let followModal = document.querySelector(".follow-modal");
 let overlay = document.querySelector(".overlay");
+let copyBtn = document.querySelector(".copy-btn");
 
 function openSharemodal(){
     shareModal.classList.add("shareactive");
@@ -20,14 +21,21 @@ function openFollowmodal(){
     overlay.classList.add("overlayactive");
 }
 
-function copyURL(){
-    navigator.clipboard.writeText(window.location.href)
-    .then(() =>{
+async function copyURL(){
+    try{
+        // window.location.href => used to fetch live url
+        // navigator.clipboard.writeText => copy text to clipboard
+        await navigator.clipboard.writeText(window.location.href);  
         console.log("copied");
-    })
-    .catch(err => {
-        console.log("failed", err);
-    });
+    }
+    catch(e) {
+        copyBtn.innerText = "Failed";
+    }
+    copyBtn.classList.add("active");
+
+    setTimeout( () => {
+        copyBtn.classList.remove("active")
+    },2000);
 }
 
 
